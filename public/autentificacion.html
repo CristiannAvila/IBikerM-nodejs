@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autentificación</title>
+    <link rel="stylesheet" href="css/autenticacion.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="css/formulario.css">
+</head>
+<body>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+        <center><h4 class="crearte">Crear Cuenta</h4></center>
+		<form id="formulario" class="formulario" action="/register" method="POST" >
+
+            <!-- Grupo: Nombre -->
+			<div class="formulario__grupo" id="grupo__nombre">
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input"  required name="nombre" id="nombre" placeholder="Nombres">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El nombre solo puede contener letras.</p>
+			</div>
+
+            <!-- Grupo: Apllido -->
+			<div class="formulario__grupo" id="grupo__apellido">
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" required name="apellido" id="apellido" placeholder="Apeliidos">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El apellido solo puede contener letras.</p>
+			</div>
+
+                <select name="tipoDocumento" required id="tipoDocumento" placeholder="Tipo De Documento">
+                    <option value="">Secciona...</option>
+                    <option value="T.I">Tajeta Identidad</option>
+                    <option value="C.C">Cédula de Ciudadanía</option>
+                    <option value="C.E">Cédula Extranjera</option>
+                </select>
+
+            <!-- Grupo: Numero de documeto -->
+			<div class="formulario__grupo" id="grupo__numeroDocumento">
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" required name="numeroDocumento" id="numeroDocumento" placeholder="Numero de Documento">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El numero documento tiene que ser de 6 a 10 dígitos.</p>
+			</div>
+
+			<!-- Grupo: Teléfono -->
+			<div class="formulario__grupo" id="grupo__telefono">
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" required name="telefono" id="telefono" placeholder="Telefono">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El telefono solo puede contener de 7 a 10 dígitos.</p>
+			</div>
+
+			<!-- Grupo: Correo Electronico -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<div class="formulario__grupo-input">
+					<input type="email" class="formulario__input" required name="correo" id="correo" placeholder="ejemplo@correo.com">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+			</div>
+
+            <!-- Grupo: Contraseña -->
+			<div class="formulario__grupo" id="grupo__password">
+				<div class="formulario__grupo-input">
+					<input type="password" class="formulario__input" required name="password" id="password" placeholder="Contraseña">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">Al menos debe tener una may., una min., un núm. y debe contener de 8 a 18 caracteres.</p>
+			</div>
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+			</div>
+
+                <select name="rol" id="rol" hidden>
+                    <option value="cliente"></option>
+                    <option value="admin"></option>
+                </select>
+            <input type="submit" id="submit" class="button" value="Registrar usuario">
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="/auth" method="POST">
+			<h2>Iniciar Sesión</h2>
+            <br>
+			<input type="text" id="correo" name="correo" placeholder="Correo" />
+			<input type="password" id="password" name="password" placeholder="Contraseña"/>
+			<a href="forest.html">¿Olvidó su contraseña?</a>
+			<input type="submit" value="Login" class="button">
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>¡Bienvenido!</h1>
+				<p>Para mantenerse conectado con nosotros, inicie sesión con su información personal</p>
+				<button class="ghost" id="signIn">Iniciar Sesión</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>¡Hola!</h1>
+				<p>Introduce tus datos personales y comienza el viaje con nosotros</p>
+				<button  class="ghost button" id="signUp">Registrate</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <script src="js/autenticacion.js"></script>
+    <script src="js/validacion.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js "></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
+    <script src="libs/mdl/material.min.js "></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js "></script>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <title>login</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <form action="/auth" method="POST">
+        <h2>Login</h2>
+        <div class="section">
+            <div class="tittle">Correo</div>
+            <div class="field"><input type="text" id="correo" name="correo"></div>
+        </div>
+        <div class="section">
+            <div class="tittle">Password</div>
+            <div class="field"><input type="password" id="password" name="password"></div>
+        </div>
+        <div class="section">
+            <div class="button"><input type="submit" value="Login"></div>
+            <div class="button"><a href="signup.html">Registrarse</a></div>
+        </div>
+    </form>
+</body>
+const securepassword = async (password) =>{
+bcrypt.hash(password, 10,(err, password)=>{
+    if(err){
+        console.log(err);
+    }else{
+        password = password;
+        return;
+    }
+});
+}
+</html>

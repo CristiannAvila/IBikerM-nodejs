@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6179/6179011.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/login2.css">
+    <script src="js/contraseña.js"></script>
+    <title>Olvide mi Contraseña </title>
+</head>
+<body>
+    <!-- Sing in  Form -->
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="https://cdn-icons-png.flaticon.com/512/159/159478.png" alt="sing up image"></figure>
+                </div>
+                <div class="signin-form">
+                    <center>
+                    <h2 class="form-title">¿Olvido su Contraseña?</h2>
+                </center>
+                    <form name="form" action="resetpassword"  method="get">
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="password" name="ca" placeholder="Contraseña Antigua"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="cn" placeholder="Contraseña Nueva"/>
+                        </div>
+                        <br>
+                        <a href="login.html" class="signup-image-link">Iniciar Sesión</a>
+                        <br>
+                        <center>
+                        <div class="form-group form-button">
+                            <input onclick="cambio()" type="button" class="form-submit" value="Cambiar Contraseña"/>
+                        </div>
+                    </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/912/912125.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/login2.css">
+    <script src="js/correo.js"></script>
+    <title>Confirmación Correo</title>
+</head>
+<body>
+    <!-- Sing in  Form -->
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="https://cdn-icons-png.flaticon.com/512/912/912125.png" alt="sing up image"></figure>
+                </div>
+                <div class="signin-form">
+                    <center>
+                    <h2 class="form-title">Confirma tu Correo Electronico</h2>
+                </center>
+                    <form name="form" action="/forgotpassword" method="POST">
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="email" name="correo" id="correo" placeholder="Correo Electronico"/>
+                        </div>
+                        <br>
+                        <br>
+                        <center>
+                        <div class="form-group form-button">
+                            <input onclick="confi()" type="submit" class="form-submit" value="Confirmar"/>
+                        </div>
+                    </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+//const isAuthenticated = (req, res, next) => {
+    //if (req.isAuthenticated()) {
+      //return next();
+    //}
+    //req.flash("error_msg", "Not Authorized.");
+    //res.redirect("/index.html");
+  //};
+
+//module.exports = {
+  //  isAuthenticated
+//}
+
